@@ -1,0 +1,7 @@
+﻿Scenario 1
+
+Given a savings account
+and a balance of $500
+when depositing CAD 20
+Then ensure balance is $520 
+And ensure last transaction correctly details deposit
