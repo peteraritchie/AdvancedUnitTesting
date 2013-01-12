@@ -4,28 +4,25 @@ using System.Linq;
 using Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.BDD
+namespace Tests.BDD.BaseFixture
 {
 	[TestClass]
-	public class when_depositing_to_active_account_through_atm
+	public class when_depositing_to_active_account_through_atm : BankAccountTestFixtureBase
 	{
 		[TestMethod]
 		public void then_canadian_cash_succeeds()
 		{
-			BankAccount account = new
-				BankAccount(1, AccountType.Savings, 500m);
-			account.Deposit(new Currency("CAD", 20.0m));
+			BankAccount.Deposit(new Currency("CAD", 20.0m));
 		}
 
 		[TestMethod]
 		public void then_canadian_cash_results_in_correct_transaction()
 		{
-			BankAccount account = new BankAccount(1, AccountType.Savings, 500m);
-			account.Deposit(new Currency("CAD", 20.0m));
+			BankAccount.Deposit(new Currency("CAD", 20.0m));
 
-			DateTime datetime = account.Transactions.Last().DateTime;
+			DateTime datetime = BankAccount.Transactions.Last().DateTime;
 
-			Assert.IsTrue(TranactionEqualityComparer.Instance.Equals(account.Transactions.Last(), new Transaction(datetime, 20m, false)));
+			Assert.IsTrue(TranactionEqualityComparer.Instance.Equals(BankAccount.Transactions.Last(), new Transaction(datetime, 20m, false)));
 		}
 
 		[TestMethod]

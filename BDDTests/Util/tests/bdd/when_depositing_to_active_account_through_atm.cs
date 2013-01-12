@@ -12,8 +12,7 @@ namespace Tests.BDD
 		[TestMethod]
 		public void then_canadian_cash_succeeds()
 		{
-			BankAccount account = new
-				BankAccount(1, AccountType.Savings, 500m);
+			BankAccount account = new BankAccount(1, AccountType.Savings, 500m);
 			account.Deposit(new Currency("CAD", 20.0m));
 		}
 

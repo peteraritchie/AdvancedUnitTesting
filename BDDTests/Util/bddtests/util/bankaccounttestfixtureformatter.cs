@@ -11,9 +11,7 @@ namespace Tests.Util
 			if (asBase == null)
 			{
 #if DEBUG
-				writer.WriteLine("{0} is not of type {1}",
-					instance.GetType().FullName,
-					typeof(BankAccountTestFixtureBase));
+				writer.WriteLine("{0} is not of type {1}", instance.GetType().FullName, typeof(BankAccountTestFixtureBase));
 #endif
 				return;
 			}

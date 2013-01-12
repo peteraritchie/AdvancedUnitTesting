@@ -7,7 +7,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests.BDD.BaseFixture
 {
 	[TestClass]
-	public class when_depositing_to_active_account_through_atm : BankAccountTestFixtureBase
+	public class when_depositing_to_active_account_through_atm :
+		BankAccountTestFixtureBase
 	{
 		[TestMethod]
 		public void then_canadian_cash_succeeds()

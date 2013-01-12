@@ -8,8 +8,7 @@ namespace Domain
 		public AccountType AccountType { get; private set; }
 		public int Id { get; private set; }
 
-		public BankAccount(int id, AccountType accountType, 
-			decimal balance)
+		public BankAccount(int id, AccountType accountType, decimal balance)
 		{
 			AccountType = accountType;
 			Id = id;
@@ -40,7 +39,7 @@ namespace Domain
 	{
 		Unknown,
 		Savings,
-		Chequing,
+		Cheqing,
 		Rrsp,
 		Tfsa
 	};
