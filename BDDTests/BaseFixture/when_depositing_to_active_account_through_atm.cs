@@ -16,13 +16,6 @@ namespace Tests.BDD.BaseFixture
 		}
 
 		[TestMethod]
-		public void new_test()
-		{
-			Assert.Fail("");
-		}
-
-
-		[TestMethod]
 		public void then_canadian_cash_results_in_correct_transaction()
 		{
 			BankAccount.Deposit(new Currency("CAD", 20.0m));
